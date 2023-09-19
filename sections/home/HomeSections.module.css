@@ -1,0 +1,244 @@
+.home {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main {
+    width: 100%;
+    max-width: 450px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    gap: 10px;
+}
+
+.home__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
+
+.title {
+    font-size: 2.6em;
+    color: rgb(240, 248, 255);
+    font-family: 'Black Ops One', cursive;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+}
+
+.titlesmall {
+    display: none;
+}
+
+.title:last-child {
+    letter-spacing: 10px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tagline {
+    font-size: 1.3em;
+    color: rgba(227, 228, 229, 0.943);
+    font-family: "Inter";
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.Ido {
+    width: 100%;
+    max-width: 400px;
+    font-size: 0.9em;
+    color: rgb(232, 229, 229);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.nav {
+    flex: 0.56;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.navigation {
+    width: 100%;
+    max-width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    list-style-type: none;
+}
+
+.navitem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: "Roboto";
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: rgb(156, 156, 156);
+    font-size: 0.85em;
+}
+
+.line {
+    position: relative;
+    height: 1px;
+    width: 50px;
+}
+
+.activeline {
+    position: relative;
+    height: 0.5px;
+    width: 30px;
+    background-color: rgb(255, 255, 255);
+    width: 90px;
+}
+
+.line::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid rgb(139, 141, 142);
+}
+
+.activenavitem {
+    color: rgb(255, 255, 255);
+}
+
+
+.socials {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon {
+    font-size: 20px;
+    fill: rgb(192, 29, 29);
+    transition: all 0.3s ease-in-out;
+}
+
+.socialitem:hover .icon {
+    fill: rgb(255, 255, 255) !important;
+    scale: 1.1;
+}
+
+.btn {
+    color: #aefffaa2;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+    padding: 0.55em 1.6em;
+    border: 1px solid #aefffaa2;
+    border-radius: 8px;
+    user-select: none;
+    margin-top: 80px;
+    font-family: "Roboto", sans-serif;
+    display: none;
+}
+
+.btn:hover {
+    background-color: #aefffaa2;
+    color: #000;
+}
+
+@media screen and (max-width: 1058px) {
+    .home {
+        padding: 10px;
+    }
+
+    .main {
+        max-width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        font-size: 20px;
+    }
+
+    .tagline {
+        max-width: 100% !important;
+        text-align: center;
+    }
+
+    .nav,
+    .socials {
+        display: none;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .info {
+        align-items: center !important;
+    }
+
+    .Ido {
+        max-width: 500px;
+    }
+
+    .titlesmall {
+        font-size: 3.2em;
+        width: 100%;
+        max-width: 600px;
+
+        color: rgb(240, 248, 255);
+        font-family: 'Black Ops One', cursive;
+        font-weight: 200;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        display: block;
+    }
+
+    .btn {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .main {
+        font-size: 18px;
+    }
+
+    .titlesmall {
+        font-size: 2.2em !important;
+    }
+
+}
+
+@media screen and (max-width: 460px) {
+    .main {
+        font-size: 14px;
+    }
+}

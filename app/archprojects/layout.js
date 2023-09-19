@@ -1,7 +1,6 @@
-import "./globals.css";
 
 export const metadata = {
-  title: "Karnail Singh | Software Engineer",
+  title: "Karnail Singh | archive projects",
 };
 
 export default function RootLayout({ children }) {

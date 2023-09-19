@@ -1,0 +1,115 @@
+.aboutSection {
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(189, 205, 215);
+    font-family: "Inter", sans-serif;
+    gap: 30px;
+}
+.aboutSection__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.aboutSection__para {
+    width: 100%;
+    max-width: 540px;
+    font-size: 1em;
+    color: rgba(206, 210, 209, 0.918);
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.2em;
+    padding: 0 3px;
+    font-weight: 100 !important;
+}
+
+.aboutSection__para > p {
+    font-size: 1.05em;
+    font-weight: 100 !important;
+}
+
+.span {
+    color: rgb(181, 251, 255);
+    font-weight: 500;
+}
+.span::selection {
+    color: rgb(4, 6, 44) !important;
+    font-weight: 700;
+}
+
+.skills {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-left: 30px;
+    gap: 2px;
+    list-style-type: lower-greek;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.skills:hover li > span {
+    color: rgb(227, 254, 255);
+    font-weight: 500;
+}
+
+.skills> li {
+    width: 48%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.skills> li > span {
+    transition: all 0.3s ease-in-out;
+    color: rgba(162, 255, 255, 0.884);
+}
+
+
+
+@media screen and (max-width: 1058px) {
+    .aboutSection {
+        padding: 10px;
+    }
+    .aboutSection__para {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+.aboutSection {
+    font-size: 14px;
+}
+
+.skills {
+    justify-content: center;
+}
+
+}
+
+@media screen and (max-width: 460px) {
+    
+    .skills {
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 !important;
+        margin: 0;
+        margin-top: 10px;
+        position: relative;
+        flex: 1;
+    }
+
+    .skills> li {
+        width: 70%;
+        flex: 1;
+    }
+    
+    }
