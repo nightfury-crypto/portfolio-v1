@@ -9,13 +9,23 @@ import ProjectSection from "@/sections/projects/ProjectSection";
 
 export default function Home() {
   const hoverRef = useRef(null);
-  const [isloading, setIsloading] = useState(true)
+  const [isloading, setIsloading] = useState(true);
+  const [greetingLst, setGreetingLst] = useState([
+    "Ram Ram",
+    "राम राम",
+    "Hello",
+    "नमस्ते",
+    "Namaste",
+  ]);
+  const [greetingIndex, setGreetingIndex] = useState(0);
 
   useEffect(() => {
-    setIsloading(false)
-    
-  }, [])
+    const timeout = setTimeout(() => {
+      setIsloading(false);
+    }, 5000);
 
+    return () => clearTimeout(timeout);
+  }, []);
 
   const handleCursor = (e) => {
     e.stopPropagation();
@@ -24,14 +34,22 @@ export default function Home() {
     hoverRef.current.style.top = `${y - 50}px`;
   };
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setGreetingIndex(greetingIndex + 1);
+    }, 1000);
+    return () => clearTimeout(timeout);
+  }, [greetingIndex]);
+
   if (isloading) {
     return (
       <div className={styles.loading}>
-        <h1>Loading...</h1>
+        <h1 style={{ color: "rgba(141, 173, 199, 0.81)", fontSize: "2.6em", fontFamily: "Roboto" }}>
+          {greetingLst[greetingIndex]}
+        </h1>
       </div>
-    )
+    );
   }
-
 
   return (
     <div className={styles.container} onMouseOver={(e) => handleCursor(e)}>
