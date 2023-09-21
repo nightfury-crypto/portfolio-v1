@@ -102,12 +102,14 @@
     letter-spacing: 1px;
     color: rgb(156, 156, 156);
     font-size: 0.85em;
+    transition: all 0.2s ease-in-out;
 }
 
 .line {
     position: relative;
     height: 1px;
     width: 50px;
+    transition: all 0.2s ease-in-out;
 }
 
 .activeline {
@@ -116,6 +118,7 @@
     width: 30px;
     background-color: rgb(255, 255, 255);
     width: 90px;
+    transition: all 0.2s ease-in-out;
 }
 
 .line::before {
@@ -124,12 +127,23 @@
     width: 100%;
     height: 100%;
     border-top: 1px solid rgb(139, 141, 142);
+    transition: all 0.2s ease-in-out;
 }
 
 .activenavitem {
     color: rgb(255, 255, 255);
+    transition: all 0.2s ease-in-out;
 }
 
+.socialstop {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;
+    display: none;
+}
 
 .socials {
     width: fit-content;
@@ -175,6 +189,10 @@
 @media screen and (max-width: 1058px) {
     .home {
         padding: 10px;
+    }
+
+    .socialstop {
+        display: flex;
     }
 
     .main {

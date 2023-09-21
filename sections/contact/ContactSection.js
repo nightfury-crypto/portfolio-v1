@@ -13,6 +13,10 @@ function ContactSection() {
         <a className={styles.btn} href = "mailto: karnailpersonal@gmail.com">
           <span>Say Hello</span>
         </a>
+          <span className={styles.span}>or</span>
+          
+          <span className={styles.emailId}>karnailpersonal@gmail.com</span>
+        
       </div>
 
       <div className={styles.footer}>

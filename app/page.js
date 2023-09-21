@@ -6,23 +6,24 @@ import { useEffect, useRef, useState } from "react";
 import AboutSection from "@/sections/about/AboutSection";
 import ContactSection from "@/sections/contact/ContactSection";
 import ProjectSection from "@/sections/projects/ProjectSection";
+// import EducationSection from "@/sections/education/EducationSection";
 
 export default function Home() {
   const hoverRef = useRef(null);
+  const mainwrapRef = useRef(null);
+  const [activeSection, setActiveSection] = useState("about");
   const [isloading, setIsloading] = useState(true);
   const [greetingLst, setGreetingLst] = useState([
-    "Ram Ram",
     "राम राम",
     "Hello",
     "नमस्ते",
-    "Namaste",
   ]);
   const [greetingIndex, setGreetingIndex] = useState(0);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsloading(false);
-    }, 5000);
+    }, 2000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -37,9 +38,30 @@ export default function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setGreetingIndex(greetingIndex + 1);
-    }, 1000);
+    }, 800);
     return () => clearTimeout(timeout);
   }, [greetingIndex]);
+
+  const handleScroll = (elem) => {
+    const scroll = mainwrapRef?.current?.scrollTop;
+    if (scroll >= elem?.offsetTop - elem?.clientHeight / 3) {
+      setActiveSection(elem?.id);
+    }
+  } 
+  // for scroll positions
+  useEffect(() => {
+
+    const about_elm = document.querySelector("#about");
+    const project_elm = document.querySelector("#projects");
+    const contact_elm = document.querySelector("#contact");
+
+    handleScroll(about_elm);
+    handleScroll(project_elm);
+    handleScroll(contact_elm);
+    
+  }, [mainwrapRef?.current?.scrollTop]);
+
+
 
   if (isloading) {
     return (
@@ -54,12 +76,13 @@ export default function Home() {
   return (
     <div className={styles.container} onMouseOver={(e) => handleCursor(e)}>
       <div className="customCursorShadow" ref={hoverRef}></div>
-      <div className={styles.container__wrapper}>
+      <div className={styles.container__wrapper} ref={mainwrapRef}>
         <div className={styles.container__left}>
-          <HomeSections />
+          <HomeSections activeSection={activeSection} />
         </div>
         <div className={styles.container__right}>
           <AboutSection />
+          {/* <EducationSection /> */}
           <ProjectSection />
           <ContactSection />
         </div>

@@ -1,0 +1,66 @@
+.timeline {
+    width: 100%;
+    height: fit-content;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+.line {
+    width: 2.5px;
+    height: 100%;
+    background-color: rgb(149, 177, 177);
+    position: absolute;
+}
+
+
+.circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: rgb(221, 235, 234);
+    position: absolute;
+}
+
+.circle::after {
+    content: "";
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background-color: rgb(22, 55, 88);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.content__left {
+    flex: 1;
+    background-color: red;
+    padding: 10px;
+}
+
+.content__right {
+    flex: 1;
+    background-color: blue;
+    padding: 10px;
+}
+.content {
+    flex: 1;
+    /* background-color: yellow; */
+    position: absolute;
+    right: 110%;
+    padding: 10px;
+}
